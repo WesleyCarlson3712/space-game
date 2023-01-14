@@ -6,6 +6,8 @@ using namespace std;
 
 int main() {
     Ship ship;
-    cout << ship.name << endl;
+    SpaceStation spaceStation;
+    // ship.printShipStats(); 
+    spaceStation.printWears();
     return 0;
 }

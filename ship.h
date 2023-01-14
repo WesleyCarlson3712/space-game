@@ -2,6 +2,7 @@
 #define SHIP_H
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 class Ship {
@@ -25,6 +26,36 @@ public:
     int crew = 0;
     int armour = 0;
     int money = 0;
+
+    void printShipStats() {
+        cout << "Name:     " << name     << endl;
+        cout << "Health:   " << health   << endl;
+        cout << "Speed:    " << speed    << endl;
+        cout << "Capacity: " << capacity << endl;
+        cout << "Crew      " << crew     << endl;
+        cout << "Armour:   " << armour   << endl;
+        cout << "Money:    " << money    << endl;
+    }
+
+    int getInt(int min, int max) {
+        int number = 0;
+        bool invalid = false;
+
+        do{
+            cin >> number;
+            invalid = (number < min || number > max || cin.fail());
+
+            if(invalid) {
+                cout << "dont be stupid, stupid head" <<endl;
+                cin.clear();
+                cin.ignore(10000,'\n');
+            }
+
+        } while(invalid);
+
+        return number;
+}
+
 };
 
 #endif // SHIP_H
